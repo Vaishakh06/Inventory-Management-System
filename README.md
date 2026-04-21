@@ -17,6 +17,7 @@ A web-based Inventory Management System that helps track and manage product stoc
 
 ## 📁 Project Structure
 
+'''
 inventory-system/
 │
 ├── backend/
@@ -33,6 +34,7 @@ inventory-system/
 │
 ├── .env
 └── package.json
+'''
 
 ## 🔐 Environment Variables
 
