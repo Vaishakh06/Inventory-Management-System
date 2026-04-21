@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Stock</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h1>Delete Product</h1>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="add.html">Add Stock</a> |
+        <a href="reduce.html">Reduce Stock</a> |
+        <a href="report.html">Low Stock Report</a>
+    </nav>
+
+    <form id="deleteForm">
+        <label>Product ID to Delete:
+            <input type="text" name="product_id" required />
+        </label><br><br>
+        <button type="submit">Delete Product</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        const form = document.getElementById('deleteForm');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            const res = await fetch('http://localhost:5000/delete-stock', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const resData = await res.json();
+            result.textContent = resData.message || resData.error;
+            form.reset();
+        });
+
+        function logout() {
+            localStorage.removeItem('loggedIn');
+            window.location.href = 'login.html';
+        }
+    </script>
+
+</body>
+
+</html>

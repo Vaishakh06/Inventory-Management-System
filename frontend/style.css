@@ -1,0 +1,219 @@
+/* Friendly, warm base */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0ece3;
+    color: #3b3a36;
+    margin: 0;
+    padding: 30px 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Headers with a soft touch */
+h1 {
+    font-weight: 700;
+    font-size: 2.8rem;
+    text-align: center;
+    color: #5a4e42;
+    margin-bottom: 40px;
+    letter-spacing: 1.2px;
+    text-shadow: 1px 1px 3px rgba(90, 78, 66, 0.3);
+}
+
+/* Navigation bar with soft pills */
+nav {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    background: #d6cbbf;
+    color: #5a4e42;
+    font-weight: 600;
+    padding: 12px 22px;
+    margin: 0 10px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 6px rgba(90, 78, 66, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    user-select: none;
+}
+
+nav a:hover {
+    background: #5a4e42;
+    color: #f0ece3;
+    box-shadow: 3px 3px 8px rgba(90, 78, 66, 0.6);
+}
+
+/* Forms with gentle shadows and rounded corners */
+form {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(90, 78, 66, 0.15);
+    max-width: 500px;
+    margin: 0 auto 50px;
+    transition: box-shadow 0.3s ease;
+}
+
+form:hover {
+    box-shadow: 0 10px 25px rgba(90, 78, 66, 0.25);
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #6b5b4a;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1.8px solid #d6cbbf;
+    border-radius: 8px;
+    outline-offset: 2px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #5a4e42;
+    box-shadow: 0 0 8px rgba(90, 78, 66, 0.3);
+}
+
+/* Buttons with warm colors and subtle hover */
+button {
+    background-color: #8a7d6f;
+    color: #f0ece3;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #6b5b4a;
+}
+
+/* Tables with soft shadows and spacing */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    margin-bottom: 50px;
+    font-size: 1rem;
+    box-shadow: 0 8px 25px rgba(90, 78, 66, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 14px 20px;
+    color: #5a4e42;
+}
+
+th {
+    background-color: #c9bca8;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+tr {
+    background-color: #f7f4ef;
+    border-radius: 12px;
+}
+
+tr:hover {
+    background-color: #e6dfd3;
+    transition: background-color 0.3s ease;
+}
+
+/* Message styling */
+#result {
+    font-weight: 700;
+    text-align: center;
+    margin-top: 25px;
+    color: #7a6851;
+}
+
+/* Small nice touch: inputs and buttons full width on mobile */
+@media (max-width: 600px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    form {
+        padding: 20px 15px;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px auto;
+        width: 70%;
+        max-width: 200px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+.table-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(90, 78, 66, 0.15);
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+
+.table-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #5a4e42;
+}
+
+#productsTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    font-size: 1rem;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(90, 78, 66, 0.1);
+}
+
+#productsTable thead {
+    background-color: #c9bca8;
+}
+
+#productsTable th, #productsTable td {
+    text-align: left;
+    padding: 14px 20px;
+    color: #5a4e42;
+}
+
+#productsTable tr {
+    background-color: #f7f4ef;
+    border-radius: 12px;
+}
+
+#productsTable tr:hover {
+    background-color: #e6dfd3;
+    transition: background-color 0.3s ease;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Stock</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+
+
+<body>
+    <h1>Add Stock</h1>
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="reduce.html">Reduce Stock</a> |
+        <a href="report.html">Low Stock Report</a>
+        <a href="delete.html">Delete Product</a>
+    </nav>
+
+    <form id="addForm">
+        <label>Product ID: <input type="text" name="product_id" required /></label><br><br>
+        <label>Name: <input type="text" name="name" required /></label><br><br>
+        <label>Quantity: <input type="number" name="quantity" required /></label><br><br>
+        <label>Threshold: <input type="number" name="threshold" required /></label><br><br>
+        <button type="submit">Add Stock</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        const form = document.getElementById('addForm');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            data.quantity = Number(data.quantity);
+            data.threshold = Number(data.threshold);
+
+            const res = await fetch('http://localhost:5000/add-stock', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            const resultData = await res.json();
+            result.textContent = resultData.message || resultData.error;
+            form.reset();
+        });
+
+        function logout() {
+            localStorage.removeItem('loggedIn');
+            window.location.href = 'login.html';
+        }
+    
+    </script>
+
+</body>
+
+</html>

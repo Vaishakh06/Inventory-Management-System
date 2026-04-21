@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Stock - Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+   <body>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 20px;">
+        <img src="logo.png" alt="Smart Stock Logo" style="height: 60px;" />
+        <h1 style="margin: 0; font-size: 2.5rem; color: #3e342d;">GV Smart Stock</h1>
+    </div>
+
+
+    <nav>
+        <a href="add.html"><i class="fas fa-plus"></i> Add Stock</a>
+        <a href="reduce.html"><i class="fas fa-minus-circle"></i> Reduce Stock</a>
+        <a href="report.html"><i class="fas fa-chart-line"></i> Low Stock Report</a>
+        <a href="delete.html"><i class="fas fa-trash-alt"></i> Delete Product</a>
+    </nav>
+
+    <div class="table-container">
+        <h2>📦 All Products</h2>
+        <table id="productsTable">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Threshold</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        async function loadProducts() {
+            const response = await fetch('http://localhost:5000/products');
+            const products = await response.json();
+            const tableBody = document.querySelector('#productsTable tbody');
+            tableBody.innerHTML = '';
+
+            products.forEach(product => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${product.product_id}</td>
+                    <td>${product.name}</td>
+                    <td>${product.quantity}</td>
+                    <td>${product.threshold}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        loadProducts();
+
+        function logout() {
+            localStorage.removeItem('loggedIn');
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
