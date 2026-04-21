@@ -34,6 +34,15 @@ inventory-system/
 ├── .env
 └── package.json
 
+## 🔐 Environment Variables
+
+Create a `.env` file in the root folder and add the following:
+
+MONGO_URI=mongodb://localhost:27017/inventoryDB
+PORT=5000
+
+> Make sure MongoDB is running locally before starting the server.
+
 ## ▶️ How to Run
 1. Start MongoDB  
 2. Run backend:
