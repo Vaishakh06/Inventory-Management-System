@@ -12,6 +12,3 @@ package-lock.json
 # VS Code
 .vscode/
 
-# Build outputs
-dist/
-build/
